@@ -8,5 +8,7 @@ class ArtworkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artwork
         fields = ['id', 'title', 'description', 'category', 'image',
-                  'artist', 'artist_name', 'created_at']
-        read_only_fields = ['artist', 'created_at']
+                  'artist', 'artist_name', 'created_at',
+                  'similarity_score', 'similar_to', 'is_flagged']
+        read_only_fields = ['artist', 'created_at',
+                            'similarity_score', 'similar_to', 'is_flagged']
