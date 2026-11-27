@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from rest_framework.routers import DefaultRouter
 
 from artworks.views import ArtworkViewSet
+from fraud_alert.views import FraudCheckView
 
 
 def home(request):
@@ -24,6 +25,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
+    path('api/fraud/check/', FraudCheckView.as_view()),
     path('api/', include(router.urls)),
 ]
 
